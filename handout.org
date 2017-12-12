@@ -265,13 +265,16 @@ a positive difference, a negative value is entirely possible!] Determining /how
 large/ a difference is significant usually involves computing a /p-value/.
 
 \begin{figure}[!ht]
-  \includegraphics{./images/p-value}
-  \caption{A very nice visual description from Wikipedia. This image
-    depicts a \emph{one-sided} p-value. The two-sided case would consider
-    the symmetric tail on the negative side of the distribution. In practice,
-    one should always use the two-sided test when there exists the possibility
-    of the effect being negative. The image text describes some additional
-    logical fallacies involving p-values.}
+  \includegraphics{./images/p-val2}
+  \caption{A visual depiction of a p-value. The probability density
+  function (PDF) pictured is arises from our assumed null hypothesis,
+  thus it is centered around zero ($\beta=0$). The red arrow is the
+  value of the treatment effect estimate we happened to observe.
+  The p-value is defined as the probability of observing a result as or
+  more extreme than what we observed, thus it is the area in blue.
+  Note that we consider the area corresponding to the negative and
+  positive value of the observed effect -- this is known as a two-sided
+  p-value.}
   \label{fig:p-value}
 \end{figure}
 
@@ -361,6 +364,11 @@ each group.
   and control to have the same number of subjects.}
   \label{fig:unbalanced}
 \end{figure}
+
+#+latex: \marginnote{More accurately, we want to balance the \emph{standard errors}; here,
+#+latex: I'm assuming the noise is the same for both the treatment and the effect. If the
+#+latex: treatment happened to increase variability, we might actually want to put more
+#+latex: samples in the treatment group, in order to deal with this increase.}
 
 Other factors are not easy to measure or control. In an educational setting,
 prior knowledge of a student can be difficult to measure, and socioeconomic
@@ -641,10 +649,10 @@ material before. There's a lot of important concepts I didn't cover in this
 document.
 
 * Acknowledgements
-I'd like to thank John Arakaki for helpful comments on an early version of these
-notes.
+Lots of folks have helped improve these notes / the talk, and I'd like to thank
+them here. John Arakaki provided some helpful comments on an early version of
+these notes. Jessica Hwang and Mike Baiocchi gave some helpful feedback on the
+accompanying presentation.
 
 [[bibliographystyle:plain]]
 [[bibliography:bibtex_database.bib]]
-
-* Appendix

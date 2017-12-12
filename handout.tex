@@ -1,4 +1,4 @@
-% Created 2017-12-11 Mon 15:57
+% Created 2017-12-11 Mon 16:40
 % Intended LaTeX compiler: pdflatex
 \documentclass{tufte-handout}
 \usepackage[utf8]{inputenc}
@@ -62,7 +62,7 @@ provide recommendations for informed reading of literature.
 \end{abstract}
 
 \section{An Analogy}
-\label{sec:orge20846e}
+\label{sec:org5081cc4}
 I like playing a game called Dungeons and Dragons.\cite{mearls2014} It's a game
 that means different things to different people, but to me, it's an exercise in
 \emph{collaborative storytelling}. The players assume the roles of different
@@ -91,7 +91,7 @@ twenties. As one might expect, performing science like a tabletop game leads to
 some unfortunate pathologies.}
 
 \section{Motivation}
-\label{sec:org93c1649}
+\label{sec:org20fc1d2}
 In social science, randomness is omnipresent. Unlike the clean, simple,
 repeatable behavior of the natural world, human beings are messy, complicated,
 and variable in their responses. Statistical techniques provide the means to
@@ -105,7 +105,7 @@ statistics entirely, despite the relevance of the subject to our personal and
 professional lives. My reasons for presenting this tutorial are the following:
 
 \subsection{Statistics and engineering practice}
-\label{sec:orgc29274a}
+\label{sec:org4569205}
 Randomness often arises in engineering applications, and statistics is vital to
 handling it. \emph{Industrial statistics} is applied especially to manufacturing, and
 is used both to measure outcomes of manufacturing processes for informed
@@ -113,7 +113,7 @@ decision making, and proactively to design and conrol processes. The basic
 concepts from statistics are needed to understand these industrial applications.
 
 \subsection{Statistics and social science}
-\label{sec:org81c80bd}
+\label{sec:org7acb248}
 Statistics is vitally important to understand modern issues in social science,
 most pressingly the \emph{reproducibity crisis}.\cite{open2015estimating} This crisis
 undermines many long-held conclusions from social science, and calls into
@@ -122,7 +122,7 @@ the reproducibility crisis makes sense, except in the context of statistics.
 
 Let's start with a specific example.
 \section{Case Study: Power Pose}
-\label{sec:orgb77ef42}
+\label{sec:org0267b1e}
 In 2010, authors Carney, Cuddy, and Yap \cite{carney2010power} published a paper
 claiming that ``power posing'' -- holding an expansive physical pose (Fig.
 \ref{fig:2-pose}) -- for a short time caused positive changes in an individual's
@@ -167,7 +167,7 @@ aspects of an experiment matter?'' These are the sorts of questions we shall
 study below.
 
 \section{Statistical Inference}
-\label{sec:org03f2f4e}
+\label{sec:org874eb35}
 Drawing quantitative conclusions from data is an exercise in \emph{statistical
 inference}. \footnote{Formally, statistical inference involves determining parameters
 of an underlying probability distribution. Choosing the \emph{correct} distribution
@@ -227,7 +227,7 @@ the difference may save you a headache when reading literature.}
 
 We will elucidate these concepts below.
 \subsection{Significance testing}
-\label{sec:org2289415}
+\label{sec:orgb337974}
 Testing for significance usually follows the framework of \emph{null hypothesis
 significance testing} (NHST). The high-level philosophy of this framework is to
 define a statistical model under the assumption that the treatment has no
@@ -290,18 +290,21 @@ a positive difference, a negative value is entirely possible!} Determining \emph
 large} a difference is significant usually involves computing a \emph{p-value}.
 
 \begin{figure}[!ht]
-  \includegraphics{./images/p-value}
-  \caption{A very nice visual description from Wikipedia. This image
-    depicts a \emph{one-sided} p-value. The two-sided case would consider
-    the symmetric tail on the negative side of the distribution. In practice,
-    one should always use the two-sided test when there exists the possibility
-    of the effect being negative. The image text describes some additional
-    logical fallacies involving p-values.}
+  \includegraphics{./images/p-val2}
+  \caption{A visual depiction of a p-value. The probability density
+  function (PDF) pictured is arises from our assumed null hypothesis,
+  thus it is centered around zero ($\beta=0$). The red arrow is the
+  value of the treatment effect estimate we happened to observe.
+  The p-value is defined as the probability of observing a result as or
+  more extreme than what we observed, thus it is the area in blue.
+  Note that we consider the area corresponding to the negative and
+  positive value of the observed effect -- this is known as a two-sided
+  p-value.}
   \label{fig:p-value}
 \end{figure}
 
 \subsection{The p-value}
-\label{sec:org6f8c447}
+\label{sec:orgacd8b3d}
 The \emph{p-value} is a measure of how incompatible some data are with a given
 hypothesis. It is a measure of surprise, and corresponds to the probability of
 observing a result at least as extreme as what was observed. Figure
@@ -370,7 +373,7 @@ of the treatment and socioeconomic effects -- this is called a \emph{confound}.
 Standard practices from \emph{experimental design} are meant to address these issues.
 
 \subsection{Balance and randomization}
-\label{sec:orge2ee824}
+\label{sec:org906eff0}
 \emph{Balance} is a property of an experimental design, and is important to help
 ensure particular beneficial statistical properties.\footnote{Namely, a balanced
 design will have higher statistical \emph{power} (probability of detecting a real
@@ -388,6 +391,11 @@ each group.
   and control to have the same number of subjects.}
   \label{fig:unbalanced}
 \end{figure}
+
+\marginnote{More accurately, we want to balance the \emph{standard errors}; here,
+I'm assuming the noise is the same for both the treatment and the effect. If the
+treatment happened to increase variability, we might actually want to put more
+samples in the treatment group, in order to deal with this increase.}
 
 Other factors are not easy to measure or control. In an educational setting,
 prior knowledge of a student can be difficult to measure, and socioeconomic
@@ -425,7 +433,7 @@ an experiment through a somewhat cartoonish example.
 \end{figure*}
 
 \subsection{Practical vs statistical significance}
-\label{sec:orgf5094ed}
+\label{sec:org5dab3a8}
 When making a decision, it is not enough to consider statistical significance.
 Even if the effect size is vanishingly small, it is still possible to find a
 significant p-value by drawing enough samples. Thus, it is important to consider
@@ -445,21 +453,21 @@ where \(s\) is the estimated standard deviation. Cohen's \(d\) is useful when th
 are no meaningful units for the measured response, and there exist standardized
 values for judging the size of \(d\).
 \subsection{And so on}
-\label{sec:org196b26b}
+\label{sec:org2def7ea}
 There are many more important aspects of statistical inference, and what I've
 covered has been at a rather high level. Rather than get too lost in the weeds,
 let's move on to how learning from people can fail, and talk about the
 \emph{replication crisis}.
 
 \section{Issues with Sigificance Testing}
-\label{sec:org67dae6b}
+\label{sec:org72a6f85}
 We've seen some of the machinery of null hypothesis significance testing: How we
 can draw particular kinds of conclusions from data, and a bit about how to
 design experiments. If these techniques are well-founded, why is there a
 reproducibility crisis? In this section, we'll explore some plausible reasons.
 
 \subsection{P-hacking}
-\label{sec:org642b5c9}
+\label{sec:org349677d}
 A dirty secret of scientific literature is that papers containing statistically
 significant results are more likely to be published. This is known as
 \href{https://en.wikipedia.org/wiki/Publication\_bias}{publication bias},\footnote{\url{https://en.wikipedia.org/wiki/Publication\_bias}} and leads
@@ -473,7 +481,7 @@ to obtain an acceptably low p-value. There are many ways to accomplish this. One
 method is called \emph{multiple hypothesis testing}.
 
 \subsection{Multiple hypotheses testing}
-\label{sec:org298a165}
+\label{sec:org4fb13a2}
 Remember the Dungeons and Dragons analogy above? D\&D is played by rolling dice
 many times -- eventually, someone will roll a twenty, and succeed where they
 would otherwise fail. The \emph{multiple hypothesis testing} pathology works much the
@@ -502,7 +510,7 @@ adjust our expectations accordingly. However, one can give a false impression
 by selectively reporting analysis and results.
 
 \subsection{Sample sizes}
-\label{sec:org7d0bc30}
+\label{sec:orgf7be884}
 One challenge with studying people is variability. Noise tends to be
 comparatively tame in experiments involving the physical world; physicists tend
 to use a \(5\sigma\) criteria for discovery, which corresponds to
@@ -531,7 +539,7 @@ size which is too small, leading to a low power study. Low power studies
 introduce new kinds of issues.
 
 \subsection{Type S / Type M errors}
-\label{sec:org419301d}
+\label{sec:orge50beec}
 Classical NHST considers two kinds of error: Type I error is the probability of
 \emph{falsely rejecting} the null hypothesis,\footnote{There's a related, but different,
 concept called a \emph{false discovery rate} (FDR). You can think of the false
@@ -572,7 +580,7 @@ recommend framing study design in terms of Type S and M error, rather than the
 traditional power design.
 
 \section{Recommendations}
-\label{sec:orgcbf2fd0}
+\label{sec:org3e3936e}
 Given these issues, you may be feeling concerned. For those of us that would
 like to make practical choices based on studies involving humans (e.g.
 educators), this is particularly alarming -- How can we make informed decisions
@@ -580,10 +588,10 @@ if \href{http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0
 some practical recommendations below which will (hopefully) help.
 
 \subsection{Reading literature}
-\label{sec:orgc35c2cd}
+\label{sec:org97c9ed3}
 \begin{enumerate}
 \item Practice skeptical reading:
-\label{sec:orga55366b}
+\label{sec:orge4c7575}
 When reading about findings regarding human beings, whether from psychology,
 medicine, or dietary advice, treat findings with skepticism. A great place to
 practice this skeptical reading is in science journalism. Science journalists
@@ -615,7 +623,7 @@ reality. Sometimes that means being wrong.
 This leads into my next recommendation:
 
 \item Get comfortable with uncertainty:
-\label{sec:orgbacddb0}
+\label{sec:orgdf32f54}
 Studying humans is inherently uncertain and challenging, so it's best to get
 used to that fact. Expecting to be able to find \(p<10^{-7}\) in a social
 experiment is patently absurd, but so is pretending to have certainty about the
@@ -625,7 +633,7 @@ important. Internalizing this difference, and being able to distinguish between
 degrees of uncertainty, is important for working in high-noise environments.
 
 \item Compare relevant effect sizes:
-\label{sec:orga74595a}
+\label{sec:org85dbfa4}
 This one is a very practical (though not always applicable) technique: Compare
 published effect estimates with similar effects. For example, if a treatment
 purports to add as many years to your life as quitting smoking, that's a
@@ -635,16 +643,16 @@ if you wish to become well-versed in a subject.
 \end{enumerate}
 
 \subsection{In practice}
-\label{sec:org41b0bc8}
+\label{sec:orgaa9fbb3}
 \begin{enumerate}
 \item Get solid statistical training:
-\label{sec:orge90a6b5}
+\label{sec:org2812db9}
 This should come as no surprise, but if you want to do social science in
 practice, you should get some serious statistical training. Take classes, and
 gain some serious statistical background before attempting to study human
 behavior.
 \item Avoid low power designs:
-\label{sec:org80b1809}
+\label{sec:org9f824b7}
 Even once you have some statistical background, avoid falling into low power
 experimental designs. One practice when doing power calculations is to set
 effect sizes aspirationally high, the idea being that, if the real effect is
@@ -655,7 +663,7 @@ you suspect you are studying a small effect, either design the study accounting
 for that, or seriously question whether studying the effect is worthwhile at
 all.
 \item Preregister studies and establish pre-analysis plans:
-\label{sec:org1a43850}
+\label{sec:org0acaa95}
 \href{https://www.psychologicalscience.org/observer/research-preregistration-101}{Preregistration}
 \footnote{\url{https://www.psychologicalscience.org/observer/research-preregistration-101}}
 is  a practice  meant  to  help prevent  p-hacking;  it  involves detailing  and
@@ -667,7 +675,7 @@ confident  that particular  decisions  were  made not  in  order  to p-hack  the
 results, but rather were made before the data were ever seen.
 \end{enumerate}
 \subsection{Further Reading}
-\label{sec:org0a6530b}
+\label{sec:org8ce67ce}
 The replication crisis (or at least some of the underlying issues) have been
 around for a very long time. \href{http://calteches.library.caltech.edu/51/2/CargoCult.htm}{Richard Feynman} gave a commencement speech at
 CalTech back in the day warning about similar issues. More recently, \href{https://www.youtube.com/watch?v=J5A5o9I7rnA\&list=WL\&index=21}{Laura
@@ -689,13 +697,12 @@ material before. There's a lot of important concepts I didn't cover in this
 document.
 
 \section{Acknowledgements}
-\label{sec:org6006a20}
-I'd like to thank John Arakaki for helpful comments on an early version of these
-notes.
+\label{sec:org7d2cde4}
+Lots of folks have helped improve these notes / the talk, and I'd like to thank
+them here. John Arakaki provided some helpful comments on an early version of
+these notes. Jessica Hwang and Mike Baiocchi gave some helpful feedback on the
+accompanying presentation.
 
 \bibliographystyle{plain}
 \bibliography{bibtex_database}
-
-\section{Appendix}
-\label{sec:org5a81e8e}
 \end{document}
